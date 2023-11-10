@@ -18,25 +18,27 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Lee el archivo .xlsx y selecciona la Hoja2
+# Lee el archivo .xlsx y selecciona la Hoja1 para la captura de datos
 df = pd.read_excel("G:/Mi unidad/Octubre 2023/Ecuaciones Diferenciales/Entregables/ACA 3/visor-pueblos-indigenas-06-2021.xlsx", sheet_name="Hoja1")
 
-# Asigna las columnas a variables
+# Asigna las columnas a variables parametrizadas en la hoja de cálculo en la pestaña Hoja1
 año = df["Año"]
 poblacion = df["Población"]
 comunidad_indigena = df["Pueblo indígena"][0]
 
+# Se resentan los valores de las filas y columnas en la hoja de cálculo en la pestaña Hoja1
 A2 = df.iloc[0, 0] # Año 2005
 A3 = df.iloc[1, 0] # Año 2018
 B2 = df.iloc[0, 1] # Población en el 2005
 B3 = df.iloc[1, 1] # Población en el 2018
 
-# Calcular la tasa de crecimiento r
-# Usar la fórmula P(t) = P0 * e^(r*t)
-# Despejar r = (log(P(t)/P0))/t
+# Calcula la tasa de crecimiento r
+# Usa la fórmula P(t) = P0 * e^(r*t)
+# Despeja r = (log(P(t)/P0))/t
 r = (np.log(B3/B2)) / (A3 - A2)
 
-# Predecir la población futura hasta el 2028
+# Predice la población futura hasta el 2058 en este ejemplo de la ejecución.
+# El valor del año se puede modificar para ver el comportamiento en la gráfica.
 año_futuro = np.arange(A2, 2058)
 poblacion_futura = B2 * np.exp(r * (año_futuro - A2))
 año_rango = 2058
