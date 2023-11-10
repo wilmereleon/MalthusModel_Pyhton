@@ -39,8 +39,8 @@ B3 = df.iloc[1, 1] # Población en el 2018
 r = (np.log(B3/B2)) / (A3 - A2)
 
 ## Predicción la población futura hasta el 2058 en este ejemplo de la ejecución.
-# El valor del año se puede modificar para ver el comportamiento en la gráfica: año_futuro = np.arange(A2, MODIFICABLE).
-año_futuro = np.arange(A2, 2058)
+# El valor del año se puede modificar para ver el comportamiento en la gráfica: año_futuro = np.arange(A2, AÑO DESEADO + 1).
+año_futuro = np.arange(A2, 2059) 
 poblacion_futura = B2 * np.exp(r * (año_futuro - A2))
 año_rango = 2058
 
