@@ -1,7 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[141]:
+# In[1]:
+
+## Aplicación de modelo Malthus en diversas poblaciones indígenas
+## en Colombia 2005 y 2018 con proyecciones a años posteriores:
+# 1. Se toma la base de datos subida a la página del DANE:
+#    https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico
+# 2. Se decarga el documento en Excel en formato .xlsx llamado visor-pueblos-indígenas-06-2021.xlsx
+# 3. Se crea una hoja nueva (Hoja1) para replicar los valores de las celdas que detallan el total
+#    de la población en los años 2055 y 2018 y una celda que replique el dato de la comunidad indígena
+#    que se analiza para el modelo.
 
 
 # Importar librerías
@@ -43,7 +52,7 @@ plt.legend()
 plt.show()
 
 
-# In[121]:
+# In[2]:
 
 
 print(f"Datos de comunidad indígena: {comunidad_indigena}")
@@ -57,14 +66,14 @@ print(f"r representa la tasa de cambio de los dos años: {r}")
 
 
 
-# In[103]:
+# In[3]:
 
 
 # Representación de la población año a año hasta 2028
 print(poblacion_futura)
 
 
-# In[142]:
+# In[4]:
 
 
 # Equivale a  P(t) = P0 * e^(r*t), donde P0 = B2, r = 0,017 y año_rango = 2058.
@@ -72,47 +81,18 @@ poblacion_futura = B2 * np.exp(r * (año_rango - 2005))
 print(f"La población indígena {comunidad_indigena} en el año {año_rango} sería de {poblacion_futura:.0f} personas, según el modelo de Malthus.")
 
 
-# In[ ]:
+# In[5]:
 
 
-## Conclusión uno
+## Conclusión uno:
 # El modelo Malthus no considera aspecto ambientales en el comportamiento del incremento poblacional
 # El gráfico del modelo Malthus muestra una curva exponencial que representa el aumento de población en el tiempo,
 # la curva sees más ascendente a medida de los años transcurren.
 # En este ejemplo, se modificó el año de proyección... se puede apreciar el cambio a partir del año 2058.
 
 
-# In[ ]:
+# In[6]:
 
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
