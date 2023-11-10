@@ -26,24 +26,26 @@ año = df["Año"]
 poblacion = df["Población"]
 comunidad_indigena = df["Pueblo indígena"][0]
 
-# Se resentan los valores de las filas y columnas en la hoja de cálculo en la pestaña Hoja1
+## Captura de datos de las celdas 
+# Se presentan los valores de las filas y columnas en la hoja de cálculo en la pestaña Hoja1
 A2 = df.iloc[0, 0] # Año 2005
 A3 = df.iloc[1, 0] # Año 2018
 B2 = df.iloc[0, 1] # Población en el 2005
 B3 = df.iloc[1, 1] # Población en el 2018
 
-# Calcula la tasa de crecimiento r
-# Usa la fórmula P(t) = P0 * e^(r*t)
-# Despeja r = (log(P(t)/P0))/t
+## Calcula la tasa de crecimiento r
+# Usa la fórmula P(t) = P0 * e^(r*t) y
+# se despeja r = (log(P(t)/P0))/t
 r = (np.log(B3/B2)) / (A3 - A2)
 
-# Predice la población futura hasta el 2058 en este ejemplo de la ejecución.
-# El valor del año se puede modificar para ver el comportamiento en la gráfica.
+## Predicción la población futura hasta el 2058 en este ejemplo de la ejecución.
+# El valor del año se puede modificar para ver el comportamiento en la gráfica: año_futuro = np.arange(A2, MODIFICABLE).
 año_futuro = np.arange(A2, 2058)
 poblacion_futura = B2 * np.exp(r * (año_futuro - A2))
 año_rango = 2058
 
-# Graficar los datos y la predicción
+## Gráfica los datos y la predicción
+# Se establecen los ejes «x» y «y»
 plt.plot(A2, B2, "o", label="Población inicial")
 plt.plot(A3, B3, "o", label="Población final")
 plt.plot(año_futuro, poblacion_futura, "-", label="Predicción")
@@ -87,15 +89,22 @@ print(f"La población indígena {comunidad_indigena} en el año {año_rango} ser
 
 
 ## Conclusión uno:
-# El modelo Malthus no considera aspecto ambientales en el comportamiento del incremento poblacional
+# El modelo Malthus no considera aspecto ambientales en el comportamiento del incremento poblacional.
 # El gráfico del modelo Malthus muestra una curva exponencial que representa el aumento de población en el tiempo,
-# la curva sees más ascendente a medida de los años transcurren.
+# La curva es más ascendente a medida de los años transcurren.
 # En este ejemplo, se modificó el año de proyección... se puede apreciar el cambio a partir del año 2058.
 
 
 # In[6]:
 
-
+## Conclusión dos:
+# Para estimar la llegada a una catástrofe de Malthus, se debe incorporar un segundo grupo de datos que estimen recursos;
+# Los recursos pueden ser de disponibilidad de alimentos y demás bienes de consumo.
+# El modelo Malthus es útil para el crecimiento poblacional de comunidades indígenas cuando se puede estimar con precisión...
+# ... que dicho grupo indígena está bajo la entidad territorial de resguardo y se contrasta con recursos alimenticios.
+# En el ejemplo de una comunidad indígena que tenga una tasa de natalidad y de mortalidad media en contraste con los recursos disponibles,
+# conllevaría a una catástrofe de Malthus si el Estado interviene en la comunidad en cuanto a asistencia médica en partos y educación de natalidad.
+# Está estimacipón obtenida con el modelo Malthus delimitaría los alcances del asistencialismo en el resguardo.
 
 
 
